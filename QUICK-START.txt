@@ -1,0 +1,43 @@
+RiverRunTruthBar 2.2 — by PlsDntChase / RiverRunCartel
+========================================================
+
+RUN IT
+1. Extract this entire folder first. Do not run it from inside the ZIP.
+2. Open the RUN folder.
+3. Double-click RiverRunTruthBar.exe.
+4. The launcher finds the Steam installation of Liar's Bar, installs the verified
+   BepInEx IL2CPP loader and RiverRunTruthBar plug-in, then starts the game.
+5. Press F1 in game to show or hide the RiverRunTruthBar menu.
+
+WHAT 2.2 ADDS
+- RiverRunTruthBar 2.2 title and PlsDntChase credit.
+- Default-on live reveal for other detected players' hands/cards and dice.
+- Current dice bid, total dice and bidder data where the current game mode exposes it.
+- Existing player overlay, table overlay, self controls, rank tools and other 2.1
+  features remain included.
+
+REAL VALUES ONLY
+The reveal reads values exposed by the current local game objects. If the current
+mode or game build does not expose a value, the menu reports that it is not exposed;
+it does not invent, spoof or guess hidden values. A rendered dice-face index fallback
+is clearly labelled as a raw face index.
+
+EDITING FEATURES
+Start with EDIT-FEATURES.md in this folder. The main menu/overlay feature file is:
+SOURCE\src\TruthBar.IL2CPP\TruthBarBehaviour.cs
+
+CHAOS AIM/FIRE API
+See CHAOS-API-MAP.md for the current compiled game binary, generated wrapper type and
+method names. The actual game implementation is native in GameAssembly.dll, so there
+is no honest C# source line number inside the installed game.
+
+VERIFYING THIS COPY
+SHA256SUMS.txt lists the SHA-256 checksum of every packaged file. The included source,
+tests and build script are under SOURCE. No legacy ub0.dll or injector is included.
+
+LICENSE AND OWNERSHIP
+RiverRunTruthBar is source-available proprietary software, not an open-source project.
+You may run the official unmodified executable personally and non-commercially. Editing,
+derivative releases, redistribution and commercial use require prior written permission
+from PlsDntChase / RiverRunCartel. Read LICENSE.md before using or sharing this package.
+Third-party material remains under its respective owner's terms.

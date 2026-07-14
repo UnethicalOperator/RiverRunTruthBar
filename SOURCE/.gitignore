@@ -1,0 +1,6 @@
+.build/
+bin/
+obj/
+*.user
+*.suo
+TruthBar.runtime.log

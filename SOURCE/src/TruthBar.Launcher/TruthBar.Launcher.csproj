@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>RiverRunTruthBar</AssemblyName>
+    <RootNamespace>TruthBar.Launcher</RootNamespace>
+    <Version>2.2.0</Version>
+    <Product>RiverRunTruthBar</Product>
+    <Authors>PlsDntChase</Authors>
+    <Company>PlsDntChase / RiverRunCartel</Company>
+    <Description>One-click RiverRunTruthBar installer and launcher for Liar's Bar.</Description>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <PublishTrimmed>false</PublishTrimmed>
+    <PluginBinaryPath Condition="'$(PluginBinaryPath)' == ''">$(MSBuildThisFileDirectory)..\TruthBar.IL2CPP\bin\Release\net6.0\TruthBar.IL2CPP.dll</PluginBinaryPath>
+    <BepInExArchivePath Condition="'$(BepInExArchivePath)' == ''">$(MSBuildThisFileDirectory)..\..\vendor\BepInEx-Unity.IL2CPP-win-x64-6.0.0-pre.2.zip</BepInExArchivePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="$(PluginBinaryPath)" LogicalName="TruthBar.Payload.TruthBar.IL2CPP.dll" />
+    <EmbeddedResource Include="$(BepInExArchivePath)" LogicalName="TruthBar.Payload.BepInEx.zip" />
+  </ItemGroup>
+
+  <Target Name="VerifyEmbeddedPayloads" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(PluginBinaryPath)')" Text="The TruthBar plugin was not built: $(PluginBinaryPath)" />
+    <Error Condition="!Exists('$(BepInExArchivePath)')" Text="The BepInEx IL2CPP archive is missing: $(BepInExArchivePath)" />
+  </Target>
+</Project>

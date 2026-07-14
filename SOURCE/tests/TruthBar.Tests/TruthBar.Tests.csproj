@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>TruthBar.Tests</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\TruthBar.IL2CPP\TruthBarLogic.cs" Link="TruthBarLogic.cs" />
+    <Compile Include="..\..\src\TruthBar.Launcher\LauncherLogic.cs" Link="LauncherLogic.cs" />
+  </ItemGroup>
+</Project>
